@@ -17,16 +17,17 @@ export default async (req, res) => {
     var usersData = JSON.parse(users);
     usersData.users.push(newUser);
 
-    const replaceUsers = writeFileSync(
-      join(templateDirectory, "users.json"),
-      JSON.stringify(usersData)
-    );
+    // save overwrite
+    // const replaceUsers = writeFileSync(
+    //   join(templateDirectory, "users.json"),
+    //   JSON.stringify(usersData)
+    // );
 
-    console.log(usersData);
+    return res.status(200).json(usersData);
 
-    return res.status(200).json({
-      message: "success",
-    });
+    // return res.status(200).json({
+    //   message: "success",
+    // });
   } else if (req.method === "GET") {
     const templateDirectory = resolve(process.cwd(), "data");
     const users = readFileSync(join(templateDirectory, "users.json"), "utf8");
