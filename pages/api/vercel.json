@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "pages/api/users.js": {
+      "includeFiles": "data/users.json"
+    }
+  }
+}
