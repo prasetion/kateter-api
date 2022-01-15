@@ -1,6 +1,6 @@
 const { join, resolve } = require("path");
 const { readFileSync, writeFileSync } = require("fs");
-
+// import {users} from "../../data/users.json"
 export default async (req, res) => {
   if (req.method === "POST") {
     var user = JSON.parse(req.body);
