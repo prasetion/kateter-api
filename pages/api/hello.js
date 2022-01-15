@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import {users} from "../../data/users"
+import {users} from "./data/users"
 
 export default function handler(req, res) {
   if(req.method === "GET"){
@@ -11,6 +11,6 @@ export default function handler(req, res) {
       name:user.name
     }
     users.data.push(newUser);
-    res.status(200).json(newUser)
+    res.status(200).json(users)
   }
 }
