@@ -1,4 +1,4 @@
-export const users = {
+export const simulations = {
   data: [
     {
       id: 1,

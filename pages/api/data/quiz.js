@@ -1,4 +1,4 @@
-export const users = {
+export const quizes = {
   data: [
     {
       id: 1,
