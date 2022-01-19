@@ -5,7 +5,7 @@ const DataList = ({ datalist }) => {
   return (
     <div>
       <div>
-        {datalist.data.map((item) => (
+        {datalist.map((item) => (
           <DataItem item={item} key={item.id}></DataItem>
         ))}
       </div>
