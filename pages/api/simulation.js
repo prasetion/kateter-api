@@ -9,7 +9,7 @@ export default function handler(req, res) {
       id: Date.now(),
       name: simulation.name,
       school: simulation.school,
-      class: simulation.class,
+      studentClass: simulation.studentClass,
       phone: simulation.phone,
       email: simulation.email,
       startTime: simulation.startTime,
