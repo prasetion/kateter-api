@@ -8,7 +8,7 @@ const simulations = ({ simulationList }) => {
     <div className={styles.container}>
       <h1>Simulations Data</h1>
       <div>
-        <Link href="/">
+        <Link href="/" passHref>
           <button className={styles.button}>Back</button>
         </Link>
         <button className={styles.button}>Download List Simulations</button>

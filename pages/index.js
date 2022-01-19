@@ -6,10 +6,10 @@ export default function Home() {
     <div className={styles.container}>
       <h1>Home</h1>
       <div>
-        <Link href="/simulations">
+        <Link href="/simulations" passHref>
           <button className={styles.button}>Go To Simulation</button>
         </Link>
-        <Link href="/quiz">
+        <Link href="/quiz" passHref>
           <button className={styles.button}>Go To Quiz</button>
         </Link>
       </div>
