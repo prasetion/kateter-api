@@ -1,6 +1,13 @@
 import { simulations } from "./data/simulation";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  setDoc,
+  doc,
+  addDoc,
+} from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDkUB699CCzrKOpwUNcBUyO7MRPKdab_Tc",
@@ -15,23 +22,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Get a list of cities from your database
-async function getCities(db) {
-  const citiesCol = collection(db, "simulations");
-  const citySnapshot = await getDocs(citiesCol);
-  const cityList = citySnapshot.docs.map((doc) => doc.data());
-  return cityList;
-}
-
-export default function handler(req, res) {
+export default async (req, res) => {
   if (req.method === "GET") {
-    const docSnap = getCities(db);
-    console.log(docSnap);
-    res.status(200).json(docSnap);
+    const simulationCollection = collection(db, "simulations");
+    const simulationSnapshot = await getDocs(simulationCollection);
+    const simulationList = simulationSnapshot.docs.map((doc) => doc.data());
+    res.status(200).json(simulationList);
   } else if (req.method === "POST") {
     const simulation = JSON.parse(JSON.stringify(req.body));
     const newSimulation = {
-      id: Date.now(),
       name: simulation.name,
       school: simulation.school,
       studentClass: simulation.studentClass,
@@ -43,7 +42,17 @@ export default function handler(req, res) {
       totalWrong: simulation.totalWrong,
       duration: simulation.duration,
     };
-    simulations.data.push(newSimulation);
-    res.status(200).json(simulations);
+
+    const simulationCollection = collection(db, "simulations");
+    const simulationSnapshot = await addDoc(
+      simulationCollection,
+      newSimulation
+    );
+
+    console.log(simulationSnapshot);
+
+    res.status(200).json({
+      message: "success",
+    });
   }
-}
+};
