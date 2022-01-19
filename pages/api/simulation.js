@@ -1,11 +1,8 @@
-import { simulations } from "./data/simulation";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   collection,
   getDocs,
-  setDoc,
-  doc,
   addDoc,
 } from "firebase/firestore/lite";
 
