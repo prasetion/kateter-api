@@ -4,7 +4,7 @@ export const quizes = {
       id: 1,
       name: "prasetion",
       school: "sekolah",
-      class: "kelas",
+      studentClass: "kelas",
       phone: "nomer handphone",
       email: "email",
       startTime: "waktu mulai",
