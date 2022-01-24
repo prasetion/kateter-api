@@ -34,7 +34,7 @@ const simulations = ({ simulationList }) => {
 };
 
 // This function gets called at build time
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Call an external API endpoint to get posts
   const simulationCollection = collection(db, "simulations");
   const simulationSnapshot = await getDocs(simulationCollection);
