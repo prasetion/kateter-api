@@ -33,7 +33,6 @@ const simulations = ({ simulationList }) => {
   );
 };
 
-// This function gets called at build time
 export async function getServerSideProps() {
   // Call an external API endpoint to get posts
   const simulationCollection = collection(db, "simulations");
