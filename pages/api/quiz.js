@@ -40,7 +40,7 @@ export default async (req, res) => {
       duration: simulation.duration,
     };
 
-    const simulationCollection = collection(db, "simulations");
+    const simulationCollection = collection(db, "quizes");
     const simulationSnapshot = await addDoc(
       simulationCollection,
       newSimulation
