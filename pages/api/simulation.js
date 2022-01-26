@@ -57,8 +57,6 @@ export default async (req, res) => {
       newSimulation
     );
 
-    console.log(simulationSnapshot);
-
     res.status(200).json({
       message: "success",
     });
