@@ -50,9 +50,10 @@ export default async (req, res) => {
       email: simulation.email,
       startTime: simulation.startTime,
       endTime: simulation.endTime,
-      totalCorrect: simulation.totalCorrect,
-      totalWrong: simulation.totalWrong,
       duration: simulation.duration,
+      moduleName: simulation.moduleName,
+      correctAnswer: simulation.correctAnswer,
+      wrongAnswer: simulation.wrongAnswer,
     };
 
     const simulationCollection = collection(db, "quizes");
