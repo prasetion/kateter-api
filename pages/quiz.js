@@ -1,5 +1,5 @@
 import React from "react";
-import DataList from "../components/DataList";
+import DataListQuiz from "../components/DataListQuiz";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
@@ -28,13 +28,12 @@ const quiz = ({ simulationList }) => {
         </Link>
         <button className={styles.button}>Download List Simulations</button>
       </div>
-      <DataList datalist={simulationList}></DataList>
+      <DataListQuiz datalist={simulationList}></DataListQuiz>
     </div>
   );
 };
 
 export async function getServerSideProps() {
-  // Call an external API endpoint to get posts
   const simulationCollection = collection(db, "quizes");
   const simulationSnapshot = await getDocs(simulationCollection);
   const simulationList = simulationSnapshot.docs.map((doc) => doc.data());

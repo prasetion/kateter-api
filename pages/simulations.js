@@ -34,13 +34,10 @@ const simulations = ({ simulationList }) => {
 };
 
 export async function getServerSideProps() {
-  // Call an external API endpoint to get posts
   const simulationCollection = collection(db, "simulations");
   const simulationSnapshot = await getDocs(simulationCollection);
   const simulationList = simulationSnapshot.docs.map((doc) => doc.data());
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       simulationList,
