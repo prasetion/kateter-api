@@ -17,6 +17,7 @@ const DataItemQuiz = ({ item }) => {
           Total Jawaban Benar: {item.correctAnswer} <br />
           Total Jawaban Salah: {item.wrongAnswer} <br />
           Durasi Pengerjaan: {item.duration} <br />
+          Score: {item.score} <br />
         </p>
       </div>
     </div>

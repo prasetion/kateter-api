@@ -53,6 +53,7 @@ export default async (req, res) => {
       totalCorrect: simulation.totalCorrect,
       totalWrong: simulation.totalWrong,
       duration: simulation.duration,
+      score: simulation.score,
     };
 
     const simulationCollection = collection(db, "simulations");

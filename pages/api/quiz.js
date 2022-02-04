@@ -54,6 +54,7 @@ export default async (req, res) => {
       moduleName: simulation.moduleName,
       correctAnswer: simulation.correctAnswer,
       wrongAnswer: simulation.wrongAnswer,
+      score: simulation.score,
     };
 
     const simulationCollection = collection(db, "quizes");

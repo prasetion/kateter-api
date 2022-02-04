@@ -13,9 +13,10 @@ const DataItem = ({ item }) => {
           Email: {item.email} <br />
           Waktu Mulai Pengerjaan: {item.startTime} <br />
           Waktu Berakhir Pengerjaan: {item.endTime} <br />
+          Durasi Pengerjaan: {item.duration} <br />
           Total Jawaban Benar: {item.totalCorrect} <br />
           Total Jawaban Salah: {item.totalWrong} <br />
-          Durasi Pengerjaan: {item.duration} <br />
+          Score: {item.score} <br />
         </p>
       </div>
     </div>
