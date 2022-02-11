@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import DownloadData from "../components/DownloadData";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDkUB699CCzrKOpwUNcBUyO7MRPKdab_Tc",
@@ -26,7 +27,10 @@ const simulations = ({ simulationList }) => {
         <Link href="/" passHref>
           <button className={styles.button}>Back</button>
         </Link>
-        <button className={styles.button}>Download List Simulations</button>
+        <DownloadData
+          apiData={simulationList}
+          fileName={"simulation"}
+        ></DownloadData>
       </div>
       <DataList datalist={simulationList}></DataList>
     </div>

@@ -4,11 +4,9 @@ import DataItem from "./DataItem";
 const DataList = ({ datalist }) => {
   return (
     <div>
-      <div>
-        {datalist.map((item) => (
-          <DataItem item={item} key={item.id}></DataItem>
-        ))}
-      </div>
+      {datalist.map((item) => (
+        <DataItem item={item} key={item.startTime}></DataItem>
+      ))}
     </div>
   );
 };
