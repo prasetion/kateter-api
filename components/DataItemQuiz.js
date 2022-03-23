@@ -7,7 +7,7 @@ const DataItemQuiz = ({ item }) => {
       <div className={styles.card}>
         <h3>Nama: {item.name}</h3>
         <p>
-          Sekolah: {item.school} <br />
+          Institusi: {item.school} <br />
           Kelas: {item.studentClass} <br />
           No Hp: {item.phone} <br />
           Email: {item.email} <br />
