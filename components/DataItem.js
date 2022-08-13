@@ -5,18 +5,13 @@ const DataItem = ({ item }) => {
   return (
     <div>
       <div className={styles.card}>
-        <h3>Nama: {item.name}</h3>
+        <h3>NRP: {item.nrp}</h3>
         <p>
-          Institusi: {item.school} <br />
-          Kelas: {item.studentClass} <br />
-          No Hp: {item.phone} <br />
-          Email: {item.email} <br />
-          Waktu Mulai Pengerjaan: {item.startTime} <br />
-          Waktu Berakhir Pengerjaan: {item.endTime} <br />
-          Durasi Pengerjaan: {item.duration} <br />
-          Total Jawaban Benar: {item.totalCorrect} <br />
-          Total Jawaban Salah: {item.totalWrong} <br />
-          Score: {item.score} <br />
+          Nama: {item.name} <br />
+          Kelas: {item.classroom} <br />
+          Time: {item.time} <br />
+          Correct: {item.correct} <br />
+          Wrong: {item.correct} <br />
         </p>
       </div>
     </div>

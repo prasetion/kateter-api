@@ -35,7 +35,7 @@ const quiz = ({ simulationList }) => {
 };
 
 export async function getServerSideProps() {
-  const simulationCollection = collection(db, "quizes");
+  const simulationCollection = collection(db, "quiz");
   const simulationSnapshot = await getDocs(simulationCollection);
   const simulationList = simulationSnapshot.docs.map((doc) => doc.data());
 
