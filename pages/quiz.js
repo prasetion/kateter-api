@@ -7,13 +7,13 @@ import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 import DownloadData from "../components/DownloadData";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDkUB699CCzrKOpwUNcBUyO7MRPKdab_Tc",
-  authDomain: "bengkel-cc4a7.firebaseapp.com",
-  projectId: "bengkel-cc4a7",
-  storageBucket: "bengkel-cc4a7.appspot.com",
-  messagingSenderId: "417386101686",
-  appId: "1:417386101686:web:7131d4817424eb8ace1f17",
-  measurementId: "G-JRBQQWS098",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
