@@ -18,6 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const fieldName = "simulation";
 
 export default async (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
@@ -36,7 +37,7 @@ export default async (req, res) => {
   }
 
   if (req.method === "GET") {
-    const simulationCollection = collection(db, "simulations");
+    const simulationCollection = collection(db, fieldName);
     const simulationSnapshot = await getDocs(simulationCollection);
     const simulationList = simulationSnapshot.docs.map((doc) => doc.data());
     res.status(200).json(simulationList);
@@ -45,18 +46,18 @@ export default async (req, res) => {
     const newSimulation = {
       name: simulation.name,
       school: simulation.school,
-      studentClass: simulation.studentClass,
-      phone: simulation.phone,
+      studentId: simulation.studentId,
       email: simulation.email,
+      simulationType: simulation.simulationType,
       startTime: simulation.startTime,
       endTime: simulation.endTime,
-      totalCorrect: simulation.totalCorrect,
-      totalWrong: simulation.totalWrong,
       duration: simulation.duration,
+      correctStep: simulation.correctStep,
+      wrongStep: simulation.wrongStep,
       score: simulation.score,
     };
 
-    const simulationCollection = collection(db, "simulations");
+    const simulationCollection = collection(db, fieldName);
     const simulationSnapshot = await addDoc(
       simulationCollection,
       newSimulation
